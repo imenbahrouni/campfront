@@ -10,18 +10,19 @@ export class UserService {
   path = environment.backend + "/api/v/users"
   constructor(private http: HttpClient) { }
 
-  addUser(user:any): Observable<any> {
+  addUser(user: any): Observable<any> {
     return this.http.post<any>(this.path, user)
   }
 
-  deleteUser(id:number) {
+  deleteUser(id: any): Observable<any> {
     return this.http.delete<any>(this.path + '/' + id)
   }
-  
-  getUser() {
 
+  getUser(id: any): Observable<any> {
+    return this.http.get<any>(this.path + '/' + id)
   }
-  updateUser() {
+  updateUser(user: any): Observable<any> {
+    return this.http.put<any>(this.path, user)
 
   }
 }

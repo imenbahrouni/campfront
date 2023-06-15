@@ -4,47 +4,50 @@
             <h2>Creation d'un user</h2>
         </div>
     </div>
-    <form>
-        <div class="row">
-            <div class="col-12">
-                <label for="">Nom</label>
-                <input type="text" [(ngModel)]="nom"  />
-            </div>
+
+    <div class="row">
+        <div class="col-4">
+            <label for="">Nom</label>
+            <input type="text" class="form-control" [(ngModel)]="nom" />
         </div>
-        <div class="row">
-            <div class="col-12">
-                <label for="">Prénom</label>
-                <input type="text" [(ngModel)]="prenom" />
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label for="">Prénom</label>
+            <input type="text" class="form-control" [(ngModel)]="prenom" />
         </div>
-        <div class="row">
-            <div class="col-12">
-                <label for="">Login</label>
-                <input type="text" />
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label for="">Login</label>
+            <input type="text" class="form-control" [(ngModel)]="login" />
         </div>
-        <div class="row">
-            <div class="col-12">
-                <label for="">Mot de passe</label>
-                <input type="text" />
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label for="">Mot de passe</label>
+            <input type="password" class="form-control" [(ngModel)]="password" />
         </div>
-        <div class="row">
-            <div class="col-12">
-                <label for="">Téléphone</label>
-                <input type="text" />
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label for="">Téléphone</label>
+            <input type="text" class="form-control" [(ngModel)]="telephone" />
         </div>
-        <div class="row">
-            <div class="col-12">
-                <label for="">Role</label>
-                <input type="text" />
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label for="">Role</label>
+            <input type="text" class="form-control" [(ngModel)]="role" />
         </div>
-        <div class="row">
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary" >Créer</button>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-2 pt-4">
+            <button type="submit" class="btn btn-primary" (click)="creer()" *ngIf="!id" style="width: 100%;">Créer</button>
         </div>
-    </form>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary" (click)="modifier()" *ngIf="id" style="width: 100%;">Modifier</button>
+        </div>
+    </div>
+
 </div>

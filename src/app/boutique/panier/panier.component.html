@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 p-3">
+            <h3>Panier</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Description</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let article of panier">
+                        <td>{{ article.titre }}</td>
+                        <td>{{ article.prix }}</td>
+                        <td>{{ article.description }}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="supprimer(article.id)">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="total">
+                            Total : {{ total}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-3 align-right">
+                <button class="btn btn-success" (click)="commander()">Commander</button>
+            </div>
+        </div>
+    </div>

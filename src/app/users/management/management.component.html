@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <label for="nom">Nom :</label>
+            <input type="text" class="form-control" id="nom" [(ngModel)]="nom">
+        </div>
+        <div class="col-3">
+            <label for="nom">Prénom :</label>
+            <input type="text" class="form-control" id="nom" [(ngModel)]="prenom">
+        </div>
+        <div class="col-3 p-4">
+            <button class="btn btn-secondary" (click)="filtrer()">Rechercher</button>
+        </div>
+        
+        <div class="col-3 p-4">
+            <button class="btn btn-secondary" (click)="creer()">Créer</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Téléphone</th>
+                    <th scope="col">Role</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <th scope="row">{{ user.id }}</th>
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.prenom }}</td>
+                    <td>{{ user.telephone }}</td>
+                    <td>{{user.role}}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="modifier(user.id)">Modifier</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="supprimer(user.id)">Supprimer</button>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
